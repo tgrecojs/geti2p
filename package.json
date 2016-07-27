@@ -1,8 +1,7 @@
 {
-  "name": "Gulp-Workflow",
+  "name": "i2p-landing-page",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A landing page for the i2p browser.",
   "scripts": {
     "start": "gulp"
   },
@@ -30,5 +29,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "compass-mixins": "^0.12.10",
+    "zen-grids": "^2.0.3"
+  }
 }
