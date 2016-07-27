@@ -1,6 +1,6 @@
 .DS_Store
 public/.DS_Store
 /*bower_components
-/*node_modules
-/*public/bower_components
+node_modules
+public/bower_components
 npm-debug.log
