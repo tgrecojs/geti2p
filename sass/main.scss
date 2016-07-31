@@ -1,106 +1,206 @@
 @import '../node_modules/compass-mixins/lib/compass';
 @import '../bower_components/breakpoint-sass/stylesheets/_breakpoint';
-
+/// Google Font
+$primary-font: 'Source Sans Pro',
+sans-serif;
+/// Font-Weights
+$light: 300;
+$norm: 400;
+$dark: 600;
 // Compass Vertical Rhythm Settings
 $base-font-size: 20px; // Sets the base font size
 $base-line-height: 36px; // Sets the base line height
 $round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height 
 $rhythm-unit: "rem"; // Sets rhythm unit to rem. Remove to use default em unit.
-
 // Note these are custom. You have to tell compass to use them yourself 
-$h1-fz: 50px;
-$h2-fz: 40px;
-$h3-fz: 30px;
-$h4-fz: 24px;
-$h5-fz: 20px;
-$h6-fz: 18px;
+$h1-fz: 65px;
+$h2-fz: 56px;
+$h3-fz: 48px;
+$h4-fz: 36px;
+$h5-fz: 28px;
+$h6-fz: 24px;
 @include establish-baseline;
-
 h1 {
-  @include adjust-font-size-to($h1-fz);
+    @include adjust-font-size-to($h1-fz);
 }
 
 h2 {
-  @include adjust-font-size-to($h2-fz);
+    @include adjust-font-size-to($h2-fz);
 }
 
 h3 {
-  @include adjust-font-size-to($h3-fz);
+    @include adjust-font-size-to($h3-fz);
 }
 
 h4 {
-  @include adjust-font-size-to($h4-fz);
+    @include adjust-font-size-to($h4-fz);
 }
 
 h5 {
-  @include adjust-font-size-to($h5-fz);
+    @include adjust-font-size-to($h5-fz);
 }
 
 h6 {
-  @include adjust-font-size-to($h6-fz);
+    @include adjust-font-size-to($h6-fz);
 }
 
 $primary-color: #b6d7a8; //light green
 $secondary-color: #ffd966; //gold 
 $third-color: #cccccc; //grey
 $footer-color: #333333; // charcol grey
-
-
-.flex-header  {
-  @include display-flex();
-  @include flex-flow(row nowrap);
-  @include align-items(stretch);
-  background-color: $primary-color;
+* {
+    @include box-sizing(border-box);
+    font-family: $primary-font;
 }
 
-.header-img {
-    padding: 1rem;
-    flex-grow: 1;
-
+.flex-header {
+    @include display-flex();
+    @include align-items(center);
+    background-color: $primary-color;
 }
 
+.header-img,
 .header-text {
-    padding: 1.5rem;
     flex-grow: 1;
+    flex-shrink: 1;
 }
 
+button {
+    background: darken($primary-color, 30%);
+    color: #fff;
+    @include box-shadow(#000 5px 5px 10px);
+}
 
+@media (min-width: 320px) and (max-width: 720px) {
+    .flex-header {
+        @include flex-flow(row wrap);
+    }
+    ,
+    .header-img,
+    .header-text {
+        padding: 1rem;
+        button {
+            width: 50%;
+            height: 100%;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: 721px) {
+    .flex-header {
+        @include flex-flow(row nowrap);
+    }
+    .header-img,
+    .header-text {
+        padding: 1.5rem;
+        button {
+            width: 50%;
+            height: 100%;
+            font-size: 2rem;
+        }
+    }
+}
 
 .what-is-container {
-  @include display-flex();
-  @include align-items(center);
-  @include justify-content(center);
-  background-color: $secondary-color;
-}
- .what-is-child{
-    width: 50%;
-    text-align: center;
-  }
-  .navbar{
-    @include display-flex()
-    @include justify-content(space-between);
-    @include align-items(center);
-  }
-
-.nav-container {
-}
-
-.logo-container{
     @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    background-color: $secondary-color;
+}
 
+@media (max-width: 720px) {
+    .what-is-child {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 721px) {
+    .what-is-child {
+        width: 50%;
+        text-align: center;
+    }
+}
+
+.navbar {
+    @include display-flex() @include justify-content(space-between);
+    @include align-items(center);
+}
+
+.nav-container {}
+
+.logo-container {
+    @include display-flex();
 }
 
 .features {
-  @include display-flex();
-  @include align-items(center);
-  @include justify-content(space-around);
-  background-color: darken($third-color, 30);
+  text-align: center;
+}
+.features div {
+    @include flex(1 1 auto);
+    text-align: center;
 }
 
-.features div {
-  @include flex-grow(1);
-  text-align: center;
-  padding: 1rem;
+@media (min-width: 721px) {
+    .features {
+        @include display-flex();
+        @include align-items(baseline);
+        @include justify-content(center);
+    }
+    .features div {
+        width: 30%;
+    }
+}
+
+@media (max-width: 720px) {
+    .features {
+        @include flex-flow(row wrap);
+    }
+    .features div {
+        width: 90%;
+    }
+}
+
+.features {
+    background-color: lighten($third-color, 15%);
+    border-bottom: 2px solid black;
+}
+
+#features-green {
+    background-color: $primary-color;
+    img {
+        height: 60px;
+        border-radius: 50%;
+    }
+    button {
+        width: 70%;
+        height: 40px;
+        background: darken($primary-color, 30%);
+        color: #fff;
+        font-size: 1rem;
+        @include box-shadow(#000 5px 5px 10px);
+    }
+}
+
+#features-green div {
+    padding: 1rem;
+}
+
+.features .slogan > h3 {
+    font-size: 2.5rem;
+        height: 100px;
+    margin-bottom: -15px;
+    margin-top: -20px;
+    padding: 1rem;
+}
+
+footer {
+    @include display-flex();
+    @include justify-content(space-around);
+    @include align-items(center);
+    line-height: .5em;
 }
 
 .feature-img {

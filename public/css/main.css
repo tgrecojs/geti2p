@@ -6,45 +6,82 @@ html {
   line-height: 1.8em; }
 
 h1 {
-  font-size: 2.5em;
-  line-height: 1.08em; }
+  font-size: 3.25em;
+  line-height: 1.10769em; }
 
 h2 {
-  font-size: 2em;
-  line-height: 1.35em; }
+  font-size: 2.8em;
+  line-height: 1.28571em; }
 
 h3 {
-  font-size: 1.5em;
-  line-height: 1.2em; }
+  font-size: 2.4em;
+  line-height: 1.125em; }
 
 h4 {
-  font-size: 1.2em;
+  font-size: 1.8em;
   line-height: 1.5em; }
 
 h5 {
-  font-size: 1em;
-  line-height: 1.8em; }
+  font-size: 1.4em;
+  line-height: 1.28571em; }
 
 h6 {
-  font-size: 0.9em;
-  line-height: 2em; }
+  font-size: 1.2em;
+  line-height: 1.5em; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif; }
 
 .flex-header {
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-align-items: stretch;
-  align-items: stretch;
+  -webkit-align-items: center;
+  align-items: center;
   background-color: #b6d7a8; }
 
-.header-img {
-  padding: 1rem;
-  flex-grow: 1; }
-
+.header-img,
 .header-text {
-  padding: 1.5rem;
-  flex-grow: 1; }
+  flex-grow: 1;
+  flex-shrink: 1; }
+
+button {
+  background: #629e48;
+  color: #fff;
+  -webkit-box-shadow: #000 5px 5px 10px;
+  -moz-box-shadow: #000 5px 5px 10px;
+  box-shadow: #000 5px 5px 10px; }
+
+@media (min-width: 320px) and (max-width: 720px) {
+  .flex-header {
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap; }
+  
+  .header-img,
+  .header-text {
+    padding: 1rem; }
+    
+    .header-img button,
+    .header-text button {
+      width: 50%;
+      height: 100%;
+      font-size: 1.5rem;
+      text-align: center; } }
+
+@media (min-width: 721px) {
+  .flex-header {
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap; }
+  .header-img,
+  .header-text {
+    padding: 1.5rem; }
+    .header-img button,
+    .header-text button {
+      width: 50%;
+      height: 100%;
+      font-size: 2rem; } }
 
 .what-is-container {
   display: -webkit-flex;
@@ -55,9 +92,15 @@ h6 {
   justify-content: center;
   background-color: #ffd966; }
 
-.what-is-child {
-  width: 50%;
-  text-align: center; }
+@media (max-width: 720px) {
+  .what-is-child {
+    width: 80%;
+    text-align: center; } }
+
+@media (min-width: 721px) {
+  .what-is-child {
+    width: 50%;
+    text-align: center; } }
 
 .navbar {
   display: -webkit-flex;
@@ -72,19 +115,68 @@ h6 {
   display: flex; }
 
 .features {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-  background-color: gray; }
+  text-align: center; }
 
 .features div {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  text-align: center;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: center; }
+
+@media (min-width: 721px) {
+  .features {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: baseline;
+    align-items: baseline;
+    -webkit-justify-content: center;
+    justify-content: center; }
+  .features div {
+    width: 30%; } }
+
+@media (max-width: 720px) {
+  .features {
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap; }
+  .features div {
+    width: 90%; } }
+
+.features {
+  background-color: #f2f2f2;
+  border-bottom: 2px solid black; }
+
+#features-green {
+  background-color: #b6d7a8; }
+  #features-green img {
+    height: 60px;
+    border-radius: 50%; }
+  #features-green button {
+    width: 70%;
+    height: 40px;
+    background: #629e48;
+    color: #fff;
+    font-size: 1rem;
+    -webkit-box-shadow: #000 5px 5px 10px;
+    -moz-box-shadow: #000 5px 5px 10px;
+    box-shadow: #000 5px 5px 10px; }
+
+#features-green div {
   padding: 1rem; }
+
+.features .slogan > h3 {
+  font-size: 2.5rem;
+  height: 100px;
+  margin-bottom: -15px;
+  margin-top: -20px;
+  padding: 1rem; }
+
+footer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: .5em; }
 
 .feature-img {
   border-radius: 50%; }
