@@ -40,7 +40,8 @@ h6 {
   display: flex;
   -webkit-align-items: center;
   align-items: center;
-  background-color: #b6d7a8; }
+  background-color: #b6d7a8;
+  padding-bottom: 1rem; }
 
 .header-img,
 .header-text {
@@ -57,15 +58,21 @@ button {
 @media (min-width: 320px) and (max-width: 720px) {
   .flex-header {
     -webkit-flex-flow: row wrap;
-    flex-flow: row wrap; }
+    flex-flow: row wrap;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-items: center;
+    align-items: center; }
   
   .header-img,
   .header-text {
-    padding: 1rem; }
+    padding: .5rem;
+    font-size: .75rem;
+    text-align: center; }
     
     .header-img button,
     .header-text button {
-      width: 50%;
+      width: 100%;
       height: 100%;
       font-size: 1.5rem;
       text-align: center; } }
@@ -90,7 +97,8 @@ button {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-  background-color: #ffd966; }
+  background-color: #ffd966;
+  border-top: 2px solid black; }
 
 @media (max-width: 720px) {
   .what-is-child {
@@ -115,7 +123,9 @@ button {
   display: flex; }
 
 .features {
-  text-align: center; }
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: -10px; }
 
 .features div {
   -webkit-flex: 1 1 auto;
@@ -142,7 +152,24 @@ button {
 
 .features {
   background-color: #f2f2f2;
-  border-bottom: 2px solid black; }
+  padding-bottom: 2rem; }
+
+.slogan {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  background: #f2f2f2;
+  text-align: center;
+  border-top: 2px solid black; }
+
+.slogan:nth-child(2n) {
+  border: 0px; }
+
+body .slogan:nth-child(3n) {
+  background: #b6d7a8; }
 
 #features-green {
   background-color: #b6d7a8; }
@@ -162,13 +189,6 @@ button {
 #features-green div {
   padding: 1rem; }
 
-.features .slogan > h3 {
-  font-size: 2.5rem;
-  height: 100px;
-  margin-bottom: -15px;
-  margin-top: -20px;
-  padding: 1rem; }
-
 footer {
   display: -webkit-flex;
   display: flex;
@@ -176,7 +196,8 @@ footer {
   justify-content: space-around;
   -webkit-align-items: center;
   align-items: center;
-  line-height: .5em; }
+  line-height: .5em;
+  border-top: 2px solid black; }
 
 .feature-img {
   border-radius: 50%; }
