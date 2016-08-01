@@ -1,0 +1,35 @@
+@import '../../node_modules/compass-mixins/lib/compass';
+@import 'colors';
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navigation {
+    list-style-type: none;
+    width: 100%;
+}
+
+.navigation a {
+    padding: 1em;
+    width: 150px;
+    color: white;
+    display: block;
+    text-decoration: none;
+    background: blue;
+    transition: .5s ease-in;
+}
+
+.navigation #top-nav {
+    @include display-flex();
+    @include justify-content(flex-start);
+}
+
+.navigation a {
+
+    &:hover {
+        background: red;
+    }
+}
+
+#bottom-nav {}

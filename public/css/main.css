@@ -29,11 +29,52 @@ h6 {
   font-size: 1.2em;
   line-height: 1.5em; }
 
+p.copyright {
+  font-size: 3rem; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif; }
+
+nav > * {
+  margin: 0;
+  padding: 0; }
+
+.navigation {
+  list-style-type: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  background: #f2f2f2;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end; }
+
+.navigation a {
+  padding: 1em;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background: #f2f2f2;
+  transition: all .5s linear; }
+
+.nav-slogan {
+  width: 550px; }
+
+.navigation #top-nav {
+  color: black; }
+
+.navigation a:hover {
+  background: #cccccc; }
+
+#bottom-nav {
+  background: #f2f2f2;
+  color: #cccccc;
+  border: 2px solid black; }
 
 .flex-header {
   display: -webkit-flex;
@@ -54,6 +95,11 @@ button {
   -webkit-box-shadow: #000 5px 5px 10px;
   -moz-box-shadow: #000 5px 5px 10px;
   box-shadow: #000 5px 5px 10px; }
+  button:hover {
+    background: #50823c;
+    transition: all 0.3s ease; }
+  button:active {
+    background: #2c4620; }
 
 @media (min-width: 320px) and (max-width: 720px) {
   .flex-header {
@@ -98,7 +144,8 @@ button {
   -webkit-justify-content: center;
   justify-content: center;
   background-color: #ffd966;
-  border-top: 2px solid black; }
+  border-top: 2px solid black;
+  border-bottom: 2px solid black; }
 
 @media (max-width: 720px) {
   .what-is-child {
@@ -110,22 +157,12 @@ button {
     width: 50%;
     text-align: center; } }
 
-.navbar {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center; }
-
-.logo-container {
-  display: -webkit-flex;
-  display: flex; }
-
 .features {
   text-align: center;
   padding-top: 2rem;
-  margin-top: -10px; }
+  margin-top: -10px;
+  background-color: #f2f2f2;
+  padding-bottom: 2rem; }
 
 .features div {
   -webkit-flex: 1 1 auto;
@@ -148,11 +185,8 @@ button {
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap; }
   .features div {
-    width: 90%; } }
-
-.features {
-  background-color: #f2f2f2;
-  padding-bottom: 2rem; }
+    width: 100%;
+    padding: 1rem; } }
 
 .slogan {
   display: -webkit-flex;
@@ -161,15 +195,12 @@ button {
   align-items: center;
   -webkit-justify-content: space-around;
   justify-content: space-around;
-  background: #f2f2f2;
   text-align: center;
+  background-color: #f2f2f2; }
+
+.slogan:nth-of-type(3n+1) {
+  background: #b6d7a8;
   border-top: 2px solid black; }
-
-.slogan:nth-child(2n) {
-  border: 0px; }
-
-body .slogan:nth-child(3n) {
-  background: #b6d7a8; }
 
 #features-green {
   background-color: #b6d7a8; }
@@ -185,19 +216,40 @@ body .slogan:nth-child(3n) {
     -webkit-box-shadow: #000 5px 5px 10px;
     -moz-box-shadow: #000 5px 5px 10px;
     box-shadow: #000 5px 5px 10px; }
+    #features-green button:hover {
+      background: #50823c;
+      transition: all 0.3s ease; }
+    #features-green button:active {
+      background: #2c4620; }
 
 #features-green div {
   padding: 1rem; }
 
-footer {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-  -webkit-align-items: center;
-  align-items: center;
-  line-height: .5em;
-  border-top: 2px solid black; }
+@media (min-width: 721px) {
+  footer {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-items: center;
+    align-items: center;
+    line-height: .5em;
+    border-top: 2px solid black;
+    background: #1a1a1a;
+    color: #fff; }
+    footer div {
+      padding-bottom: 1rem;
+      line-height: .25rem; } }
+
+@media (max-width: 720px) {
+  footer {
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    border-top: 2px solid black;
+    background: #1a1a1a;
+    color: #fff;
+    padding-bottom: .75rem;
+    text-align: center; } }
 
 .feature-img {
   border-radius: 50%; }
